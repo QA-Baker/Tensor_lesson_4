@@ -7,7 +7,7 @@
 # 4 --> 4
 
 def sum_digits(num):
-    # Здесь нужно написать код
+    our_sum = sum(int(digit) for digit in str(num))  # Преобразуем число в строку, затем суммируем цифры
     return our_sum
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
