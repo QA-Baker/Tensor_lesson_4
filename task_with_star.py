@@ -12,8 +12,25 @@
 # 4974 --> 7974
 
 def max_division_by_3(num):
-    # Здесь нужно написать код
-    return new_num
+    num_str = str(num)  # Преобразуем число в строку
+    max_num = num  # Изначально берем текущее число как максимальное
+
+    # Перебираем позиции цифр
+    for i in range(len(num_str)):
+        # Пробуем заменить цифру на каждую возможную от 0 до 9
+        for digit in range(10):
+            if digit == int(num_str[i]):  # Пропускаем, если цифра совпадает
+                continue
+
+            # Формируем новое число с заменённой цифрой
+            new_num_str = num_str[:i] + str(digit) + num_str[i + 1:]
+            new_num = int(new_num_str)
+
+            # Проверяем условия: делимость на 3 и максимальность
+            if new_num % 3 == 0 and new_num > max_num:
+                max_num = new_num
+
+    return max_num
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

@@ -6,7 +6,7 @@
 
 
 def flatten_and_sort(array):
-    # Здесь нужно написать код
+    result_list = sorted(num for sublist in array for num in sublist)  # Распаковываем и сортируем
     return result_list
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
